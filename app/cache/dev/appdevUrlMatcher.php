@@ -85,11 +85,13 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // RndBoxAuthBundle_home
-        if (rtrim($pathinfo, '/') === '/auth/home') {
-            if (substr($pathinfo, -1) !== '/') {
-                return $this->redirect($pathinfo.'/', 'RndBoxAuthBundle_home');
-            }
-            return array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\defaultController::indexAction',  '_route' => 'RndBoxAuthBundle_home',);
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\DefaultController::indexAction',  '_route' => 'RndBoxAuthBundle_home',);
+        }
+
+        // RndBoxAuthBundle_registration
+        if ($pathinfo === '/signup') {
+            return array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\DefaultController::registrationAction',  '_route' => 'RndBoxAuthBundle_registration',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

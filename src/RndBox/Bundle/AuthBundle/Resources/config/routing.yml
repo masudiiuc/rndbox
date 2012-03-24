@@ -1,9 +1,9 @@
 RndBoxAuthBundle_home:
     pattern: /login
-    defaults: { _controller: RndBoxAuthBundle:default:index }
+    defaults: { _controller: RndBoxAuthBundle:Default:index }
 RndBoxAuthBundle_registration:
     pattern: /signup
-    defaults: { _controller: RndBoxAuthBundle:default:registration }
+    defaults: { _controller: RndBoxAuthBundle:Default:registration }
 
 
 

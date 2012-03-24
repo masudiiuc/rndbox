@@ -24,6 +24,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_step' => true,
        '_configurator_final' => true,
        'RndBoxAuthBundle_home' => true,
+       'RndBoxAuthBundle_registration' => true,
     );
 
     /**
@@ -99,6 +100,11 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getRndBoxAuthBundle_homeRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\defaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/auth/home/',  ),));
+        return array(array (), array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/login',  ),));
+    }
+
+    private function getRndBoxAuthBundle_registrationRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\DefaultController::registrationAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/signup',  ),));
     }
 }

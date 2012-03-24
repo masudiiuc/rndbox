@@ -27,12 +27,18 @@ class DefaultController extends Controller
                      ->getForm();
 
         if( $request->getMethod() == 'POST' ){
+        	
             $form->bindRequest($request);
-
+			
             if( $form->isValid() ){
                 $formData = $form->getData();
                 echo '<pre/>'; print_r( $formData); die;
             }
+			else {
+				{
+					echo '2 takar Muri khao'; die;
+				}
+			}
         }
 
 
