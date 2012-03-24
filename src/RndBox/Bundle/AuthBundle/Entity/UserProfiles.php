@@ -57,4 +57,53 @@ class UserProfiles
     private $modifiedDate;
 
 
+    public function setCreatedDate($createdDate)
+    {
+        $this->createdDate = $createdDate;
+    }
+
+    public function getCreatedDate()
+    {
+        return $this->createdDate;
+    }
+
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    public function setModifiedDate($modifiedDate)
+    {
+        $this->modifiedDate = $modifiedDate;
+    }
+
+    public function getModifiedDate()
+    {
+        return $this->modifiedDate;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
 }

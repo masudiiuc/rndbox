@@ -5,6 +5,9 @@ RndBoxAuthBundle_registration:
     pattern: /signup
     defaults: { _controller: RndBoxAuthBundle:Default:registration }
 
+RndBoxAuthBundle_success:
+    pattern: /success
+    defaults: { _controller: RndBoxAuthBundle:Default:success }
 
 
 # Internal routing configuration to handle ESI
