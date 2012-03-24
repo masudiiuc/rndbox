@@ -57,4 +57,63 @@ class Users
     private $modifiedDate;
 
 
+    public function setCreatedDate($createdDate)
+    {
+        $this->createdDate = $createdDate;
+    }
+
+    public function getCreatedDate()
+    {
+        return $this->createdDate;
+    }
+
+    public function setEmailAddress($emailAddress)
+    {
+        $this->emailAddress = $emailAddress;
+    }
+
+    public function getEmailAddress()
+    {
+        return $this->emailAddress;
+    }
+
+    public function setModifiedDate($modifiedDate)
+    {
+        $this->modifiedDate = $modifiedDate;
+    }
+
+    public function getModifiedDate()
+    {
+        return $this->modifiedDate;
+    }
+
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    public function setUserType($userType)
+    {
+        $this->userType = $userType;
+    }
+
+    public function getUserType()
+    {
+        return $this->userType;
+    }
 }

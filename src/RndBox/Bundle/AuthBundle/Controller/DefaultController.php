@@ -12,6 +12,9 @@ use RndBox\Bundle\AuthBundle\Entity\RegistrationForm;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use RndBox\Bundle\AuthBundle\Entity\Users;
+use RndBox\Bundle\AuthBundle\Entity\UserProfiles;
+
 class DefaultController extends Controller
 {
     /**
@@ -59,11 +62,49 @@ class DefaultController extends Controller
             $form->bindRequest($request);
 
             if( $form->isValid() ){
-                $formData = $form->getData();
-                echo '<pre/>'; print_r( $formData); die;
+                $formData       = $form->getData();
+                $newUserId      = $this->processUserInformation($formData);
+                $newProfileId   = $this->processUserProfileInformation($newUserId, $formData);
+
+                $this->redirect($this->generateUrl('RndBoxAuthBundle_success', array()) );
             }
         }
 
         return array( 'title' => "User Registration", 'form' =>$form->createView() );
+    }
+
+    /**
+     * @Template()
+     */
+    public function successAction(){
+        return array( 'success' => 'Registration Success' );
+    }
+
+    private function processUserProfileInformation($newUserId, $formData)
+    {
+        $profileObj = new UserProfiles();
+
+        $profileObj->setUserId($newUserId);
+        $profileObj->setFirstName($formData->getFirstName());
+        $profileObj->setLastName($formData->getFirstName());
+
+        $docObj = $this->getDoctrine()->getEntityManager();
+        $docObj->persist($profileObj);
+        $docObj->flush();
+        return $profileObj->getUserId();
+    }
+
+    private function processUserInformation($formData)
+    {
+        $userObj = new Users();
+        $userObj->setEmailAddress($formData->getEmail());
+        $userObj->setPassword(md5($formData->getPassword()));
+        $userObj->setUserType('Developer');
+
+        $docObj = $this->getDoctrine()->getEntityManager();
+        $docObj->persist($userObj);
+        $docObj->flush();
+
+        return $userObj->getUserId();
     }
 }
