@@ -30,15 +30,15 @@ class DefaultController extends Controller
                      ->getForm();
 
         if( $request->getMethod() == 'POST' ){
+        	
             $form->bindRequest($request);
-
+			
             if( $form->isValid() ){
                 $formData = $form->getData();
                 echo '<pre/>'; print_r( $formData); die;
             }
+			
         }
-
-
         return array('form' => $form->createView());
     }
 
@@ -52,10 +52,10 @@ class DefaultController extends Controller
                      ->add('first_name', 'text',     array('label' => 'First Name'))
                      ->add('last_name' , 'text',     array('label' => 'Last Name'))
                      ->add('email',      'text',     array('label' => 'Email Address'))
-                     ->add('password',   'repeated', array(   'type'            => 'password',
-                                                                    'invalid_message' => "Both Password need to match",
-                                                                    'options'         => array('label'=> "Password")
-                                                                ))
+                     ->add('password',   'repeated', array('type'  => 'password',
+                                                           'invalid_message' => "Both Password need to match",
+                                                           'options'         => array('label'=> "Password")
+                                                           ))
                     ->getForm();
 
         if( $request->getMethod() == 'POST' ){

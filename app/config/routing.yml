@@ -1,3 +1,7 @@
+RndBoxPostBundle:
+    resource: "@RndBoxPostBundle/Resources/config/routing.yml"
+    prefix:   /
+
 RndBoxAuthBundle:
     resource: "@RndBoxAuthBundle/Resources/config/routing.yml"
     prefix:   /
