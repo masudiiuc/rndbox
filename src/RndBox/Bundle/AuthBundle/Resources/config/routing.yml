@@ -8,6 +8,10 @@ RndBoxAuthBundle_registration:
 RndBoxAuthBundle_success:
     pattern: /success
     defaults: { _controller: RndBoxAuthBundle:Default:success }
+    
+RndBoxAuthBundle_idea:
+    pattern: /idea
+    defaults: { _controller: RndBoxAuthBundle:Idea:index }    
 
 
 # Internal routing configuration to handle ESI

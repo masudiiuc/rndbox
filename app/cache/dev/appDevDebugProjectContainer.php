@@ -199,7 +199,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\Common\EventManager();
         $b->addEventSubscriber(new \Doctrine\DBAL\Event\Listeners\MysqlSessionInit('UTF8'));
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'rndbox', 'host' => 'localhost', 'port' => '3306', 'user' => 'root', 'password' => 'root', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array('enum' => 'string', 'varbinary' => 'string', 'tinyblob' => 'text'));
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'rndbox', 'host' => 'localhost', 'port' => '3306', 'user' => 'root', 'password' => '719219', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $a, $b, array('enum' => 'string', 'varbinary' => 'string', 'tinyblob' => 'text'));
     }
 
     /**
@@ -2104,7 +2104,7 @@ class appDevDebugProjectContainer extends Container
             'database_port' => '3306',
             'database_name' => 'rndbox',
             'database_user' => 'root',
-            'database_password' => 'root',
+            'database_password' => '719219',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'localhost',
             'mailer_user' => '',

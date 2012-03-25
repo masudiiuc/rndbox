@@ -94,6 +94,16 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\DefaultController::registrationAction',  '_route' => 'RndBoxAuthBundle_registration',);
         }
 
+        // RndBoxAuthBundle_success
+        if ($pathinfo === '/success') {
+            return array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\DefaultController::successAction',  '_route' => 'RndBoxAuthBundle_success',);
+        }
+
+        // RndBoxAuthBundle_idea
+        if ($pathinfo === '/idea') {
+            return array (  '_controller' => 'RndBox\\Bundle\\AuthBundle\\Controller\\IdeaController::indexAction',  '_route' => 'RndBoxAuthBundle_idea',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

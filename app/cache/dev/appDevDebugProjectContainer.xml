@@ -29,7 +29,7 @@
     <parameter key="database_port">3306</parameter>
     <parameter key="database_name">rndbox</parameter>
     <parameter key="database_user">root</parameter>
-    <parameter key="database_password">root</parameter>
+    <parameter key="database_password">719219</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
@@ -1540,7 +1540,7 @@
         <argument key="host">localhost</argument>
         <argument key="port">3306</argument>
         <argument key="user">root</argument>
-        <argument key="password">root</argument>
+        <argument key="password">719219</argument>
         <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>

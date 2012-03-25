@@ -62,6 +62,76 @@ class Ideas
      * @ORM\Column(name="modified_date", type="datetime", nullable=true)
      */
     private $modifiedDate;
+	
+	
+	public function setIdeaId($IdeaId)
+    {
+        $this->ideaId = $IdeaId;
+    }
+
+    public function getIdeaId()
+    {
+        return $this->ideaId;
+    }
+	public function setUserId($UserId)
+    {
+        $this->ideaId = $UserId;
+    }
+
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+	
+	public function setTitle($Title)
+    {
+        $this->title = $Title;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+	
+	public function setSlug($Slug)
+    {
+        $this->slug = $Slug;
+    }
+
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+	
+	public function setDescription($Description)
+    {
+        $this->description = $Description;
+    }
+
+    public function getDescription()
+    {
+        return $this->description;
+    }
 
 
+	public function setStatus($Status)
+    {
+        $this->status = $Status;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+	
+	public function setModifiedDate($ModifiedDate)
+    {
+        $this->modifiedDate = $ModifiedDate;
+    }
+
+    public function getModifiedDate()
+    {
+        return $this->modifiedDate;
+    }
+	
 }
