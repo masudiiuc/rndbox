@@ -1,7 +1,46 @@
-<h1>User Registration</h1>
+{% stylesheets '@RndBoxAuthBundle/Resources/public/css/styles.css' %}
+<link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+{% endstylesheets %}
 
-<form method="POST" action="{{ path('RndBoxAuthBundle_registration') }}">
-    {{ form_widget(form) }}
+        <style type="text/css">
 
-    <input type="submit" name="login" id="login" value="Signup Now!">
-</form>
+        </style>
+
+<header>
+    <section class="login_box">
+        <h2>SIGN UP</h2>
+        <form id="form1" method="POST" action="{{ path('RndBoxAuthBundle_registration') }}">
+            <div class="txt_holder fl">
+                {{ form_label(form.first_name, 'First Name') }}
+
+                {{ form_widget(form.first_name, { 'attr': {'class': 'txt_field fr'} }) }}
+            </div>
+
+            <div class="txt_holder fl">
+                {{ form_label(form.last_name, 'Last Name') }}
+
+                {{ form_widget(form.last_name, { 'attr': {'class': 'txt_field fr'} }) }}
+            </div>
+
+            <div class="txt_holder fl">
+                {{ form_label(form.email, 'Email Address') }}
+
+                {{ form_widget(form.email, { 'attr': {'class': 'txt_field fr'} }) }}
+            </div>
+
+            <div class="txt_pass_holder fl">
+                {{ form_widget(form.password, { 'attr': {'class': ''} }) }}
+            </div>
+
+
+            <div class="txt_holder fl">
+                {{ form_rest(form) }}
+                <input name="" type="submit" class="button btn_log_signup" value="Signup" />
+            </div>
+
+            <div class="clr"></div>
+        </form>
+    </section>
+</header>
+
+

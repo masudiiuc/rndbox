@@ -1,7 +1,41 @@
-<h1>Login Form</h1>
 
-<form method="POST" action="{{ path('RndBoxAuthBundle_home') }}" >
-    {{ form_widget(form) }}
 
-    <input type="submit" name="login" id="login" value="Login Now!">
+{% stylesheets '@RndBoxAuthBundle/Resources/public/css/styles.css' %}
+<link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+{% endstylesheets %}
+
+<style type="text/css">
+    ul{
+        display: block;
+    }
+</style>
+
+<form id="form1" action="{{ path('RndBoxAuthBundle_home') }}" method="post">
+    <header>
+        <section class="login_box">
+            <h2>Login Now</h2>
+
+            <div class="txt_holder fl">
+                {{ form_label(form.email, 'Email Address') }}
+
+                {{ form_widget(form.email, { 'attr': {'class': 'txt_field fr'} }) }}
+                {{ form_errors(form.email) }}
+            </div>
+
+            <div class="txt_holder fl">
+                {{ form_label(form.password, 'Password') }}
+
+                {{ form_widget(form.password, { 'attr': {'class': 'txt_field fr'} }) }}
+                {{ form_errors(form.password) }}
+            </div>
+
+            <div class="txt_holder fl">
+                {{ form_rest(form) }}
+                <input name="" type="submit" class="button btn_log_signup" value="Login Now" />
+            </div>
+
+            <div class="clr"></div>
+        </section>
+    </header>
 </form>
+

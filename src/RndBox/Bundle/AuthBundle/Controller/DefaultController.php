@@ -39,7 +39,7 @@ class DefaultController extends Controller
         }
 
 
-        return array('name' => 'Emran', 'form' => $form->createView());
+        return array('form' => $form->createView());
     }
 
     /**
@@ -65,8 +65,11 @@ class DefaultController extends Controller
                 $formData       = $form->getData();
                 $newUserId      = $this->processUserInformation($formData);
                 $newProfileId   = $this->processUserProfileInformation($newUserId, $formData);
-
-                $this->redirect($this->generateUrl('RndBoxAuthBundle_success', array()) );
+                if( $newProfileId ){
+                    echo 'ekhane to ashchi';
+                    $this->redirect($this->generateUrl('RndBoxAuthBundle_success', array()) );
+                }
+                die('ami more gechi');
             }
         }
 

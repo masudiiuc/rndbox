@@ -1,0 +1,531 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	font-family: Arial, Tahoma;
+	font-size: 12px;
+	background: #edf3fe;
+}
+
+img
+{
+	border: 0;
+}
+
+a, a:link, a:visited
+{
+	outline: 0;
+	color: #526ead;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+ul
+{
+	list-style: none;
+}
+
+header, footer, section, article, aside, nav, figure, figcaption, address
+{
+	display: block;
+}
+
+h1
+{
+	font-size: 26px;
+	font-weight: normal;
+	font-family: Georgia, 'Times New Roman';
+	margin: 0 0 15px;
+}
+
+h2
+{
+	font-family: Georgia, 'Times New Roman';
+	font-weight: normal;
+	font-size: 16px;
+	margin: 0 0 10px;
+}
+
+
+
+
+
+
+.clr
+{
+	clear: both;
+}
+
+.fl
+{
+	float: left;
+}
+
+.fr
+{
+	float: right;
+}
+
+.null
+{
+	line-height: 0;
+	font-size: 0;
+}
+
+
+
+
+
+
+
+
+header
+{
+	min-width: 800px;
+}
+
+.center
+{
+	width: 800px;
+	margin: 5px auto;
+}
+
+.btn_complete_iteration
+{
+	display: block;
+	border-radius: 10px 0 0 10px;
+	border: 1px solid #d5e3fd;
+	background: #dce8fd;
+	font-size: 12px;
+	color: #526ead;
+	padding: 3px 7px 3px 15px;
+	cursor: pointer;
+	background: url(../images/arrow.png) 7px 9px no-repeat;
+}
+
+nav
+{
+	padding: 5px 0 0;
+	font-size: 12px;
+}
+
+nav li
+{
+	float: right;
+	margin: 0 0 0 6px;
+}
+
+.main
+{
+	background: #fff;
+	width: 760px;
+	padding: 18px;
+	border: 2px solid #d5dff2;
+	margin: auto;
+}
+
+.left
+{
+	width: 500px;
+}
+
+h1 span
+{
+	color: #b09f9f;
+	font-size: 11px;
+	display: block;
+}
+
+.post
+{
+	width: 500px;
+	padding: 10px 0;
+	border-top: 1px solid #ececec;
+}
+
+.box, .box_green, .box_grey, .box_blue, .box_orange
+{
+	background: #f59657;
+	padding: 5px 0 5px 5px;
+	margin: 0 5px 0 0;
+	border-radius: 5px;
+}
+
+.box_green
+{
+	background: #b3d4a3;
+}
+
+.box_grey
+{
+	background: #d9d6ce;
+}
+
+.box_blue
+{
+	background: #a9bce2;
+}
+
+.box_orange
+{
+	background: #FF9E5D;
+}	
+
+.box img, .box_green img, .box_grey img, .box_blue img, .box_orange img
+{
+	margin: 0 5px 0 0;
+	float: left;
+}
+
+
+.orange
+{
+	color: #ff9e5d;
+}
+
+.green
+{
+	color: #B0D29F;
+}
+
+.blue
+{
+	color: #A9BCE2;
+}
+
+.grey
+{
+	color: #B09F9F;
+}
+
+.post_text
+{
+	width: 420px;
+	line-height: 20px;
+}
+
+.comment_box
+{
+	width: 400px;
+	min-height: 40px;
+	line-height: 20px;
+	border-radius: 5px;
+	background: #eceae6;
+	border: 1px solid #d9d5ce;
+	padding: 10px;
+	position: relative;
+}
+
+.comment_box .button
+{
+	padding: 4px 6px;
+}
+
+.comment_box span
+{
+	display: block;
+	padding: 8px 0;
+}
+
+.comment_box .txt_field
+{
+	width: 388px;
+	height: 150px;
+}
+
+.comment_box span a.cancel
+{
+	font-size: 10px;
+}
+
+.comment_arrow
+{
+	width: 9px;
+	height: 16px;
+	background: url(../images/arrow_comment_box.jpg);
+	position: absolute;
+	left: -9px;
+	top: 23px;
+}
+
+.spn_grey, .spn_green, .spn_blue, .spn_orange
+{
+	display: block;
+	padding: 18px 0;
+	color: #B09F9F;
+}
+
+.spn_grey a, .spn_grey a:link, .spn_grey a:visited
+{
+	color: #B09F9F;
+}
+
+.spn_green, .spn_green a, .spn_green a:link, .spn_green a:visited
+{
+	color: #B0D29F;
+}
+
+.spn_orange, .spn_orange a, .spn_orange a:link, .spn_orange a:visited
+{
+	color: #FF9E5D;
+}	
+
+.spn_blue, .spn_blue a, .spn_blue a:link, .spn_blue a:visited
+{
+	color: #a9bce2;
+}
+
+
+aside
+{
+	width: 230px;
+}
+
+.iteration
+{
+	width: 240px;
+	
+	background: #ff622b;
+	background: -moz-linear-gradient(left, #ff8b65, #ff612b);
+	background: -webkit-linear-gradient(left, #ff8b65, #ff612b);
+	background: -o-linear-gradient(left, #ff8b65, #ff612b);
+	background: -ms-linear-gradient(left, #ff8b65, #ff612b);
+	
+	box-shadow: 1px 1px 2px #6e6e6e;
+	-boz-box-shadow: 1px 1px 2px #6e6e6e;
+	-webkit-box-shadow: 1px 1px 2px #6e6e6e;
+	-o-box-shadow: 1px 1px 2px #6e6e6e;
+	-ms-box-shadow: 1px 1px 2px #6e6e6e;
+	
+	text-align: right;
+	padding: 8px 10px;
+	color: #fff;
+	margin: 0 0 25px;
+}
+
+aside li
+{
+	margin: 0 0 10px;
+	clear: both;
+	float: left;
+}
+
+aside li div
+{
+	float: left;
+}
+
+.full
+{
+	width: 760px;
+}
+
+.suggest_iteration
+{
+	border: 1px solid #c1bcb3;
+	padding: 5px 10px;
+	
+	background: #d7d4cc;
+	background: linear-gradient (top, #fff, #d9d6d0);
+	background: -moz-linear-gradient(top, #fff, #d9d6d0);
+	background: -webkit-linear-gradient(top, #fff, #d9d6d0);
+	background: -o-linear-gradient(top, #fff, #d9d6d0);
+	background: -ms-linear-gradient(top, #fff, #d9d6d0);
+
+	
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 5px 0 0;
+}
+
+.details
+{
+	width: 760px;
+	padding: 10px 0;
+	border-top: 1px solid #ececec;
+}
+
+.comments
+{
+	padding: 32px 0 0 10px;
+	color: #B09F9F;
+}
+
+.login_box
+{
+	width: 480px;
+	padding: 20px 20px 30px;
+	border: 2px solid #D5DFF2;
+	margin: 150px auto 0;
+	background: #fff;
+}
+
+.login_box label
+{
+	font-weight: bold;
+	color: #9f9999;
+	width: 115px;
+	text-align: right;
+	display: block;
+	float: left;
+	padding: 7px 0 0;
+}
+
+.txt_field, .txt_field2
+{
+	width: 345px;
+	height: 30px;
+	padding: 0 5px;
+	line-height: 30px;
+	border: 1px solid #dedede;
+	border-radius: 2px;
+	background: #f7f7f7;
+}
+
+.txt_field2
+{
+	width: 488px;
+	font-size: 18px;
+	font-family: Georgia, 'Times New Roman';
+}
+
+.area
+{
+	height: 200px;
+	overflow: auto;
+	line-height: 22px;
+	font-family: Arial, Tahoma;
+	resize: none;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+.login_box h2
+{
+	font-family: Arial, Tahoma;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 0 0 10px;
+	border-bottom: 1px dotted #e8e8e8;
+}
+
+.txt_holder
+{
+	width: 480px;
+	margin: 15px 0 0;
+}
+
+.txt_pass_holder
+{
+	width: 360px;
+	padding: 0 0 0 123px;
+	margin: 5px 0 0;
+}
+
+.txt_pass_holder label
+{
+	width: auto;
+	text-align: left;
+	display: block;
+}
+
+.txt_holder ul, .txt_pass_holder ul
+{
+	clear: both;
+	font-size: 10px;
+	color: #ff0000;
+}
+
+.txt_holder ul
+{
+	padding: 0 0 0 123px;
+}
+
+.txt_holder2
+{
+	width: 500px;
+	margin: 15px 0 0;
+}
+
+.txt_holder2 label
+{
+	display: block;
+	padding: 0 0 3px;
+	color: #B09F9F;
+}
+
+a.forgot_pass
+{
+	margin: 0 0 0 130px;
+}
+
+.button
+{
+	display: inline-block;
+	border: 1px solid #FF612B;
+	background: #ff7d50;
+	color: #fff;
+	padding: 4px 12px;
+	border-radius: 3px;
+	cursor: pointer;
+	text-shadow: 1px 1px 1px #383838;
+}
+
+.button:hover, .sel
+{
+	background: #ff9875;
+	border: 1px solid #fb845c;
+}
+
+.btn_log_signup
+{
+	margin: 0 0 0 124px;
+}
+
+.add_section
+{
+	padding: 0 10px;
+}
+
+a.cancel
+{
+	color: #ff0000;
+}
+
+.dotted_top_border
+{
+	padding-top: 15px;
+	border-top: 1px dotted #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
