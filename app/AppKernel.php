@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new RndBox\Bundle\AuthBundle\RndBoxAuthBundle(),
+            new RndBox\Bundle\PostBundle\RndBoxPostBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
