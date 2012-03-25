@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+
+<form method="POST" action="{{ path('RndBoxAuthBundle_idea') }}">
+    {{ form_widget(form) }}
+
+    <input type="submit" name="save" id="save" value="Post Idea">
+</form>
