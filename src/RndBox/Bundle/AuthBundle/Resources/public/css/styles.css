@@ -343,6 +343,7 @@ aside li div
 	border-radius: 5px;
 	cursor: pointer;
 	margin: 5px 0 0;
+	margin-right:5px;
 }
 
 .details

@@ -1,7 +1,6 @@
 <?php
 namespace RndBox\Bundle\PostBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,9 +24,7 @@ class DefaultController extends Controller
                      ->getForm();
 					 
 		
-		$data	=	$this->getIdeaData();
-		
-        if( $request->getMethod() == 'POST' ){
+		if( $request->getMethod() == 'POST' ){
             $form->bindRequest($request);
 
             if( $form->isValid() ){
@@ -37,7 +34,7 @@ class DefaultController extends Controller
             }
         }
 
-        return array( 'title' => "Idea", 'form' =>$form->createView(),'data'=>$data );
+        return array( 'title' => "Idea", 'form' =>$form->createView());
     }
 
     /**

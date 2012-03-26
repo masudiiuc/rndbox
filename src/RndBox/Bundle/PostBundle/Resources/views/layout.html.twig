@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    {% stylesheets '@RndBoxAuthBundle/Resources/public/css/styles.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+    {% endstylesheets %}
+
+    <title>{{'layout.site_title'|trans({},'FOSUserBundle')}}</title>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <section class="center">
+        <nav class="fr">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <ul>
+
+                <li>
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="{{ path('fos_user_change_password') }}">
+                        {{ 'layout.change_password' |trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="{{ path('fos_user_profile_show') }}">
+                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+            </ul>
+            {% else %}
+            <ul>
+                <li>
+                    <a href="{{ path('fos_user_registration_register') }}">Sign Up as New</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                </li>
+            </ul>
+            {% endif %}
+        </nav>
+        <div class="clr"></div>
+    </section>
+    <div class="clr"></div>
+</header>
+<!-- END of HEADER -->
+
+<div>
+    &nbsp;
+</div>
+
+{% for key, message in app.session.getFlashes() %}
+<div class="{{ key }}">
+    {{ message|trans({}, 'FOSUserBundle') }}
+</div>
+{% endfor %}
+
+<div>
+    {% block post_user_content %}
+    {% endblock post_user_content %}
+</div>
+</body>
+</html>

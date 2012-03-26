@@ -1,7 +1,54 @@
-<h1>{{title}}</h1>
+{% extends "RndBoxPostBundle::layout.html.twig" %}
 
-<form method="POST" action="{{ path('RndBoxPostBundle_idea') }}">
-    {{ form_widget(form) }}
+{% block post_user_content %}
 
-    <input type="submit" name="save" id="save" value="Post Idea">
-</form>
+    <section class="main">
+        <section class="full fl">
+            <h1 class="fl">
+                Share Your Ideas
+                <span>Write the Idea that you want to share </span>
+            </h1>
+
+            <a href="{{path('fos_user_profile_edit')}}">
+                <input name="" type="button" class="suggest_iteration fr" value="{{'user_profile.edit_profile'|trans({},'FOSUserBundle')}}" />
+            </a>
+
+            <input name="" type="button" class="suggest_iteration fr" value="{{'user_profile.suggest_an_iteration'|trans({},'FOSUserBundle')}}" />
+
+            <section class="login_box">
+                <form action="{{ path('RndBoxPostBundle_idea') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+                    <div class="txt_holder fl">
+                        {{ form_label(form.title, 'Title') }}
+
+                        {{ form_widget(form.title, { 'attr': {'class': 'txt_field fr'} }) }}
+                    </div>
+
+                    <div class="txt_holder fl">
+                        {{ form_label(form.slug, 'Title Slug') }}
+
+                        {{ form_widget(form.slug, { 'attr': {'class': 'txt_field fr'} }) }}
+                    </div>
+
+                    <div class="txt_holder fl">
+                        {{ form_label(form.description, 'Content') }}
+                        {{ form_widget(form.description, { 'attr': {'class': ''} }) }}
+                    </div>
+
+
+                    <div class="txt_holder fl">
+                        {{ form_rest(form) }}
+                        <input type="submit" class="button btn_log_signup" value="Post Now" />
+                    </div>
+
+                    <div class="clr"></div>
+                </form>
+            </section>
+        </section>
+
+        <div class="clr"></div>
+    </section>
+
+{% endblock post_user_content %}
+
+
+
