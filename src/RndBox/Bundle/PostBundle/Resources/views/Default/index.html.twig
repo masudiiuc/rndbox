@@ -3,50 +3,46 @@
 {% block post_user_content %}
 
     <section class="main">
-        <section class="full fl">
-            <h1 class="fl">
-                Share Your Ideas
-                <span>Write the Idea that you want to share </span>
+        <section class="left fl">
+            <h1>
+                Suggest a new Iteration
             </h1>
 
-            <a href="{{path('fos_user_profile_edit')}}">
-                <input name="" type="button" class="suggest_iteration fr" value="{{'user_profile.edit_profile'|trans({},'FOSUserBundle')}}" />
-            </a>
-
-            <input name="" type="button" class="suggest_iteration fr" value="{{'user_profile.suggest_an_iteration'|trans({},'FOSUserBundle')}}" />
-
-            <section class="login_box">
+            <article class="post fl">
                 <form action="{{ path('RndBoxPostBundle_idea') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
-                    <div class="txt_holder fl">
-                        {{ form_label(form.title, 'Title') }}
+                    <div class="txt_holder2">
+                        {{ form_label(form.title, 'Name of the Iteration') }}
 
-                        {{ form_widget(form.title, { 'attr': {'class': 'txt_field fr'} }) }}
+                        {{ form_widget(form.title, { 'attr': {'class': 'txt_field2', 'placeholder': 'Iteration name'} }) }}
                     </div>
 
-                    <div class="txt_holder fl">
-                        {{ form_label(form.slug, 'Title Slug') }}
+                    <div class="txt_holder2">
+                        {{ form_label(form.slug, 'URL Slug') }}
 
-                        {{ form_widget(form.slug, { 'attr': {'class': 'txt_field fr'} }) }}
+                        {{ form_widget(form.slug, { 'attr': {'class': 'txt_field2', 'placeholder': 'http://rndbox.lmjobs.com/URL_SLUG'} }) }}
                     </div>
 
-                    <div class="txt_holder fl">
-                        {{ form_label(form.description, 'Content') }}
-                        {{ form_widget(form.description, { 'attr': {'class': ''} }) }}
+                    <div class="txt_holder2">
+                        {{ form_label(form.description, 'Describe the idea') }}
+
+                        {{ form_widget(form.description, { 'attr': {'class': 'txt_field2 area', 'placeholder': 'Description'} }) }}
                     </div>
 
-
-                    <div class="txt_holder fl">
-                        {{ form_rest(form) }}
-                        <input type="submit" class="button btn_log_signup" value="Post Now" />
+                    <div class="txt_holder2">
+                        <input name="" id="chkWork" type="checkbox" value="" class="fl" />
+                        <label for="chkWork">&nbsp; I want to work on this</label>
                     </div>
 
-                    <div class="clr"></div>
+                    <div class="txt_holder2 dotted_top_border">
+                        {{form_rest(form)}}
+                        <input name="" type="submit" class="button" value="Add this section" />
+                        &nbsp; or
+                        &nbsp; <a class="cancel" href="javascript:void(0);">Cancel</a>
+                    </div>
                 </form>
-            </section>
+            </article>
         </section>
-
         <div class="clr"></div>
-    </section>
 
 {% endblock post_user_content %}
 

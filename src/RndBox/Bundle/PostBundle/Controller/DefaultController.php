@@ -65,9 +65,9 @@ class DefaultController extends Controller
         ->getRepository('RndBoxPostBundle:Ideas')
         ->find(1);
         
-    if (!$data) {
-        throw $this->createNotFoundException('No product found for id ');
-    }
+        if (!$data) {
+            throw $this->createNotFoundException('No product found for id ');
+        }
 		
         return $data;
     }
