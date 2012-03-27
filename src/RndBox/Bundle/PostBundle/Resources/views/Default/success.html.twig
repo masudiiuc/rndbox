@@ -1,0 +1,22 @@
+{% extends "RndBoxPostBundle::layout.html.twig" %}
+
+{% block post_user_content %}
+
+<section class="main">
+    <a href="{{path('RndBoxPostBundle_idea')}}">
+        <input name="" type="button" class="suggest_iteration fr" value="{{'user_profile.suggest_an_iteration'|trans({},'FOSUserBundle')}}" />
+    </a>
+
+    <section class="left fl">
+        <h1>
+            {{'idea.idea_post_success_message_title'|trans({},'RndBoxPostBundle')}}
+        </h1>
+
+        <article class="post fl">
+            <h4>{{'idea.idea_post_success_message'|trans({},'RndBoxPostBundle')}}</h4>
+        </article>
+    </section>
+    <div class="clr"></div>
+</section>
+
+{%endblock post_user_content%}

@@ -75,7 +75,7 @@ class Ideas
     }
 	public function setUserId($UserId)
     {
-        $this->ideaId = $UserId;
+        $this->userId = $UserId;
     }
 
     public function getUserId()

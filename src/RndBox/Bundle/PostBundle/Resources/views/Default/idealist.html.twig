@@ -1,0 +1,42 @@
+{% extends "RndBoxPostBundle::layout.html.twig" %}
+
+{% block post_user_content %}
+
+<section class="main">
+    <section class="full fl">
+        <h1 class="fl">
+            {{'idea.all_posted_iteration'|trans({},'RndBoxPostBundle')}}
+            <span>See all <a href="javascript:void(0);">available</a>, <a href="javascript:void(0);">upcoming</a>, <a href="javascript:void(0);">in progress</a>, or <a href="javascript:void(0);">rejected</a> iterations.</span>
+        </h1>
+
+        <a href="{{path('RndBoxPostBundle_idea')}}">
+            <input name="" type="button" class="suggest_iteration fr" value="{{'user_profile.suggest_an_iteration'|trans({},'FOSUserBundle')}}" />
+        </a>
+
+        {% for post in data %}
+
+        <article class="details fl">
+            <h2>{{ post.title|e }}</h2>
+            <div class="box fl">
+                <img src="images/img_post.jpg" width="50" height="50" alt="image" />
+            </div>
+
+            <div class="box_green fl">
+                <img src="images/img_post.jpg" width="50" height="50" alt="image" />
+                <img src="images/img_post.jpg" width="50" height="50" alt="image" />
+                <img src="images/img_post.jpg" width="50" height="50" alt="image" />
+            </div>
+
+            <div class="comments fl">
+                5 comments
+            </div>
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+    <div class="clr"></div>
+</section>
+
+{% endblock post_user_content %}

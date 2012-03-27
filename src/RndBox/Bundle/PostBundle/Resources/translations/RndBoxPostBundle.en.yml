@@ -1,0 +1,10 @@
+idea_form:
+    idea_title: Title
+    idea_description: Description
+    idea_tag: Tags
+    idea_form_title: Suggest a new iteration
+    post_idea: Post Idea
+idea:
+    idea_post_success_message_title: Iteration Submission Success
+    idea_post_success_message: Your Iteration is successfully Posted
+    all_posted_iteration: All iteration that you posted or commented

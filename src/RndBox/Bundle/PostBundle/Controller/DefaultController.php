@@ -1,10 +1,16 @@
 <?php
 namespace RndBox\Bundle\PostBundle\Controller;
+
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use FOS\UserBundle\Model\UserInterface;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
 use RndBox\Bundle\PostBundle\Entity\IdeaForm;
 use RndBox\Bundle\PostBundle\Entity\Ideas;
 
@@ -14,6 +20,11 @@ class DefaultController extends Controller
      * @Template()
      */
     public  function indexAction( Request $request ){
+
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
     	
         $signup = new IdeaForm();
 
@@ -29,12 +40,13 @@ class DefaultController extends Controller
 
             if( $form->isValid() ){
                 $formData       = $form->getData();
-				$newIdeaId      = $this->processIdeaData($formData);
-                $this->redirect($this->generateUrl('RndBoxAuthBundle_success', array()) );
+				$newIdeaId      = $this->processIdeaData($formData, $user->getUserId());
+
+                return new RedirectResponse($this->container->get('router')->generate('RndBoxPostBundle_success'));
             }
         }
 
-        return array( 'title' => "Idea", 'form' =>$form->createView());
+        return array( 'title' => "Idea", 'form' => $form->createView());
     }
 
     /**
@@ -46,12 +58,15 @@ class DefaultController extends Controller
 	
 	
 
-    private function processIdeaData($formData)
+    private function processIdeaData($formData, $currentUserId)
     {
         $userObj = new Ideas();
         $userObj->setTitle($formData->getTitle());
         $userObj->setSlug($formData->getSlug());
 		$userObj->setDescription($formData->getDescription());
+        $userObj->setUserId($currentUserId);
+        $userObj->setStatus('available');
+
         $docObj = $this->getDoctrine()->getEntityManager();
         $docObj->persist($userObj);
         $docObj->flush();
@@ -72,5 +87,20 @@ class DefaultController extends Controller
         return $data;
     }
  
+    /**
+     * @Template()
+     */
+    public function idealistAction(){
 
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+
+        $data = $this->getDoctrine()->getRepository('RndBoxPostBundle:ideas')
+                                    ->findBy(array('userId' => $user->getUserId()));
+
+
+        return array('data'=> $data);
+    }
 }
