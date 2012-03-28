@@ -16,7 +16,10 @@
         {% for post in data %}
 
         <article class="details fl">
-            <h2>{{ post.title|e }}</h2>
+            <a href="{{path('RndBoxPostBundle_showidea', {'ideaId':post.ideaId})}}">
+                <h2>{{ post.title|e }}</h2>
+            </a>
+
             <div class="box fl">
 
                 {% image output="/images/img_post.png"
