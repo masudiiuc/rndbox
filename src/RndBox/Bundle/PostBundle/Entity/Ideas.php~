@@ -1,0 +1,202 @@
+<?php
+
+namespace RndBox\Bundle\PostBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RndBox\Bundle\PostBundle\Entity\Ideas
+ */
+class Ideas
+{
+    /**
+     * @var integer $ideaId
+     */
+    private $ideaId;
+
+    /**
+     * @var string $title
+     */
+    private $title;
+
+    /**
+     * @var string $slug
+     */
+    private $slug;
+
+    /**
+     * @var text $description
+     */
+    private $description;
+
+    /**
+     * @var string $status
+     */
+    private $status;
+
+    /**
+     * @var datetime $createdDate
+     */
+    private $createdDate;
+
+    /**
+     * @var datetime $modifiedDate
+     */
+    private $modifiedDate;
+
+    /**
+     * @var RndBox\Bundle\PostBundle\Entity\Users
+     */
+    private $user;
+
+
+    /**
+     * Get ideaId
+     *
+     * @return integer 
+     */
+    public function getIdeaId()
+    {
+        return $this->ideaId;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * Set description
+     *
+     * @param text $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * Get description
+     *
+     * @return text 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set createdDate
+     *
+     * @param datetime $createdDate
+     */
+    public function setCreatedDate($createdDate)
+    {
+        $this->createdDate = $createdDate;
+    }
+
+    /**
+     * Get createdDate
+     *
+     * @return datetime 
+     */
+    public function getCreatedDate()
+    {
+        return $this->createdDate;
+    }
+
+    /**
+     * Set modifiedDate
+     *
+     * @param datetime $modifiedDate
+     */
+    public function setModifiedDate($modifiedDate)
+    {
+        $this->modifiedDate = $modifiedDate;
+    }
+
+    /**
+     * Get modifiedDate
+     *
+     * @return datetime 
+     */
+    public function getModifiedDate()
+    {
+        return $this->modifiedDate;
+    }
+
+    /**
+     * Set user
+     *
+     * @param RndBox\Bundle\PostBundle\Entity\Users $user
+     */
+    public function setUser(\RndBox\Bundle\PostBundle\Entity\Users $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * Get user
+     *
+     * @return RndBox\Bundle\PostBundle\Entity\Users
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

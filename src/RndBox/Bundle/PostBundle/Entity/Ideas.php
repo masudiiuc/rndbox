@@ -5,7 +5,7 @@ namespace RndBox\Bundle\PostBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * RndBox\Bundle\AuthBundle\Entity\Ideas
+ * RndBox\Bundle\PostBundle\Entity\Ideas
  *
  * @ORM\Table(name="ideas")
  * @ORM\Entity
@@ -24,7 +24,9 @@ class Ideas
     /**
      * @var integer $userId
      *
-     * @ORM\Column(name="user_id", type="integer", nullable=true)
+     * @ORM\Column(name="user_id", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Users", inversedBy="Ideas")
+     * @ORM\joinColumn(name="user_id", referencedColumnName="id")
      */
     private $userId;
 
@@ -57,81 +59,145 @@ class Ideas
     private $status;
 
     /**
+     * @var datetime $createdDate
+     *
+     * @ORM\Column(name="created_date", type="datetime", nullable=true)
+     */
+    private $createdDate;
+
+    /**
      * @var datetime $modifiedDate
      *
      * @ORM\Column(name="modified_date", type="datetime", nullable=true)
      */
     private $modifiedDate;
-	
-	
-	public function setIdeaId($IdeaId)
+
+
+    /**
+     * @param \RndBox\Bundle\PostBundle\Entity\datetime $createdDate
+     */
+    public function setCreatedDate($createdDate)
     {
-        $this->ideaId = $IdeaId;
+        $this->createdDate = $createdDate;
     }
 
-    public function getIdeaId()
+    /**
+     * @return \RndBox\Bundle\PostBundle\Entity\datetime
+     */
+    public function getCreatedDate()
     {
-        return $this->ideaId;
-    }
-	public function setUserId($UserId)
-    {
-        $this->userId = $UserId;
-    }
-
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-	
-	public function setTitle($Title)
-    {
-        $this->title = $Title;
+        return $this->createdDate;
     }
 
-    public function getTitle()
+    /**
+     * @param \RndBox\Bundle\PostBundle\Entity\text $description
+     */
+    public function setDescription($description)
     {
-        return $this->title;
-    }
-	
-	public function setSlug($Slug)
-    {
-        $this->slug = $Slug;
+        $this->description = $description;
     }
 
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-	
-	public function setDescription($Description)
-    {
-        $this->description = $Description;
-    }
-
+    /**
+     * @return \RndBox\Bundle\PostBundle\Entity\text
+     */
     public function getDescription()
     {
         return $this->description;
     }
 
-
-	public function setStatus($Status)
+    /**
+     * @param int $ideaId
+     */
+    public function setIdeaId($ideaId)
     {
-        $this->status = $Status;
+        $this->ideaId = $ideaId;
     }
 
-    public function getStatus()
+    /**
+     * @return int
+     */
+    public function getIdeaId()
     {
-        return $this->status;
-    }
-	
-	public function setModifiedDate($ModifiedDate)
-    {
-        $this->modifiedDate = $ModifiedDate;
+        return $this->ideaId;
     }
 
+    /**
+     * @param \RndBox\Bundle\PostBundle\Entity\datetime $modifiedDate
+     */
+    public function setModifiedDate($modifiedDate)
+    {
+        $this->modifiedDate = $modifiedDate;
+    }
+
+    /**
+     * @return \RndBox\Bundle\PostBundle\Entity\datetime
+     */
     public function getModifiedDate()
     {
         return $this->modifiedDate;
     }
-	
+
+    /**
+     * @param string $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param int $userId
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
 }

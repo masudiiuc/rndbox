@@ -1,11 +1,11 @@
 <?php
 
-namespace RndBox\Bundle\AuthBundle\Entity;
+namespace RndBox\Bundle\PostBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * RndBox\Bundle\AuthBundle\Entity\IdeaStatus
+ * RndBox\Bundle\PostBundle\Entity\IdeaStatus
  *
  * @ORM\Table(name="idea_status")
  * @ORM\Entity

@@ -4,7 +4,10 @@ idea_form:
     idea_tag: Tags
     idea_form_title: Suggest a new iteration
     post_idea: Post Idea
+    i_want_to_work_on_this: I want to work on this
 idea:
     idea_post_success_message_title: Iteration Submission Success
     idea_post_success_message: Your Iteration is successfully Posted
     all_posted_iteration: All iteration that you posted or commented
+    no_posted_iteration_found: No Posted or commented iteration found
+    idea_list: Iteration List

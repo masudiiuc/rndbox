@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use RndBox\Bundle\PostBundle\Entity\IdeaForm;
 use RndBox\Bundle\PostBundle\Entity\Ideas;
+use RndBox\Bundle\PostBundle\Entity\Users;
 
 class DefaultController extends Controller
 {
@@ -55,8 +56,6 @@ class DefaultController extends Controller
     public function successAction(){
         return array( 'success' => 'Idea Posted Successfully' );
     }
-	
-	
 
     private function processIdeaData($formData, $currentUserId)
     {
@@ -73,19 +72,7 @@ class DefaultController extends Controller
 
         return $userObj->getIdeaId();
     }
-	
-	private function getIdeaData()
-    {
-    	$data = $this->getDoctrine()
-        ->getRepository('RndBoxPostBundle:Ideas')
-        ->find(1);
-        
-        if (!$data) {
-            throw $this->createNotFoundException('No product found for id ');
-        }
-		
-        return $data;
-    }
+
  
     /**
      * @Template()
@@ -97,10 +84,28 @@ class DefaultController extends Controller
             throw new AccessDeniedException('This user does not have access to this section.');
         }
 
-        $data = $this->getDoctrine()->getRepository('RndBoxPostBundle:ideas')
+        $data = $this->getDoctrine()->getRepository('RndBoxPostBundle:Ideas')
                                     ->findBy(array('userId' => $user->getUserId()));
 
 
         return array('data'=> $data);
+    }
+
+    /**
+     * Show list of Comments under a idea/Iteration
+     * other user can view and make commments
+     *
+     * @Template()
+     */
+    public function showlistAction( $ideaId ){
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        if (!is_object($user) || !$user instanceof UserInterface) {
+            throw new AccessDeniedException('This user does not have access to this section.');
+        }
+
+        $data = $this->getDoctrine()->getRepository('RndBoxPostBundle:Ideas')
+                                    ->find(array('ideaId' => $ideaId));
+
+        return array('data' => $data, 'author' =>$user  );
     }
 }

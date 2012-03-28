@@ -8,6 +8,10 @@ RndBoxPostBundle_success:
 RndBoxPostBundle_idealist:
     pattern: /idealist
     defaults: { _controller: RndBoxPostBundle:Default:idealist }
+RndBoxPostBundle_showidea:
+    pattern: /showidea/{ideaId}
+    defaults: { _controller: RndBoxPostBundle:Default:showlist }
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"

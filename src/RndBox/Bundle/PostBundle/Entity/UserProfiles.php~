@@ -1,0 +1,152 @@
+<?php
+
+namespace RndBox\Bundle\PostBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RndBox\Bundle\PostBundle\Entity\UserProfiles
+ */
+class UserProfiles
+{
+    /**
+     * @var integer $userProfileId
+     */
+    private $userProfileId;
+
+    /**
+     * @var integer $userId
+     */
+    private $userId;
+
+    /**
+     * @var string $firstName
+     */
+    private $firstName;
+
+    /**
+     * @var string $lastName
+     */
+    private $lastName;
+
+    /**
+     * @var datetime $createdDate
+     */
+    private $createdDate;
+
+    /**
+     * @var datetime $modifiedDate
+     */
+    private $modifiedDate;
+
+
+    /**
+     * Get userProfileId
+     *
+     * @return integer 
+     */
+    public function getUserProfileId()
+    {
+        return $this->userProfileId;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string 
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string 
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set createdDate
+     *
+     * @param datetime $createdDate
+     */
+    public function setCreatedDate($createdDate)
+    {
+        $this->createdDate = $createdDate;
+    }
+
+    /**
+     * Get createdDate
+     *
+     * @return datetime 
+     */
+    public function getCreatedDate()
+    {
+        return $this->createdDate;
+    }
+
+    /**
+     * Set modifiedDate
+     *
+     * @param datetime $modifiedDate
+     */
+    public function setModifiedDate($modifiedDate)
+    {
+        $this->modifiedDate = $modifiedDate;
+    }
+
+    /**
+     * Get modifiedDate
+     *
+     * @return datetime 
+     */
+    public function getModifiedDate()
+    {
+        return $this->modifiedDate;
+    }
+}

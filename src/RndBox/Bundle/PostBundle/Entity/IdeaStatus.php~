@@ -1,0 +1,52 @@
+<?php
+
+namespace RndBox\Bundle\PostBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RndBox\Bundle\PostBundle\Entity\IdeaStatus
+ */
+class IdeaStatus
+{
+    /**
+     * @var integer $ideaStatusId
+     */
+    private $ideaStatusId;
+
+    /**
+     * @var string $status
+     */
+    private $status;
+
+
+    /**
+     * Get ideaStatusId
+     *
+     * @return integer 
+     */
+    public function getIdeaStatusId()
+    {
+        return $this->ideaStatusId;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+}

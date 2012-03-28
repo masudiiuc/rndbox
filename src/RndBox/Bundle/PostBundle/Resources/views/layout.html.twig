@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
     {% endstylesheets %}
 
+    {% javascripts '@RndBoxAuthBundle/Resources/public/js/html5.js' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+
     <title>{{'layout.site_title'|trans({},'FOSUserBundle')}}</title>
 </head>
 <body>

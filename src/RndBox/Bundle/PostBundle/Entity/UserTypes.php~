@@ -1,0 +1,52 @@
+<?php
+
+namespace RndBox\Bundle\PostBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RndBox\Bundle\PostBundle\Entity\UserTypes
+ */
+class UserTypes
+{
+    /**
+     * @var integer $userTypeId
+     */
+    private $userTypeId;
+
+    /**
+     * @var string $userType
+     */
+    private $userType;
+
+
+    /**
+     * Get userTypeId
+     *
+     * @return integer 
+     */
+    public function getUserTypeId()
+    {
+        return $this->userTypeId;
+    }
+
+    /**
+     * Set userType
+     *
+     * @param string $userType
+     */
+    public function setUserType($userType)
+    {
+        $this->userType = $userType;
+    }
+
+    /**
+     * Get userType
+     *
+     * @return string 
+     */
+    public function getUserType()
+    {
+        return $this->userType;
+    }
+}

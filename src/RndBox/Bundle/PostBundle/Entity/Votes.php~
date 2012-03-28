@@ -1,0 +1,77 @@
+<?php
+
+namespace RndBox\Bundle\PostBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RndBox\Bundle\PostBundle\Entity\Votes
+ */
+class Votes
+{
+    /**
+     * @var integer $voteId
+     */
+    private $voteId;
+
+    /**
+     * @var integer $userId
+     */
+    private $userId;
+
+    /**
+     * @var integer $vote
+     */
+    private $vote;
+
+
+    /**
+     * Get voteId
+     *
+     * @return integer 
+     */
+    public function getVoteId()
+    {
+        return $this->voteId;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set vote
+     *
+     * @param integer $vote
+     */
+    public function setVote($vote)
+    {
+        $this->vote = $vote;
+    }
+
+    /**
+     * Get vote
+     *
+     * @return integer 
+     */
+    public function getVote()
+    {
+        return $this->vote;
+    }
+}

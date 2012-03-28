@@ -1,0 +1,93 @@
+{% extends "RndBoxPostBundle::layout.html.twig" %}
+
+{% block post_user_content %}
+
+<section class="main">
+    <section class="left fl">
+        <h1>
+            {{data.title}}
+            <span>Suggested by <a href="javascript:void(0);">{{author.username}}</a> on {{data.createdDate|date('F j Y')}}.</span>
+        </h1>
+
+        <article class="post fl">
+            <div class="box_grey fl"><img src="images/img_post.jpg" width="50" height="50" alt="image" /></div>
+
+            <section class="post_text fr">
+                <span class="spn_grey"><a href="javascript:void(0);">{{author.username}}</a> said on {{data.createdDate|date('F j Y')}}</span>
+
+                {{data.description|e|striptags}}
+            </section>
+        </article>
+
+
+        <article class="post fl">
+            <div class="box_grey fl"><img src="images/img_post.jpg" class="blue_brdr" width="50" height="50" alt="image" /></div>
+
+            <section class="comment_box fr">
+                <div class="comment_arrow"></div>
+                <input name="" type="button" class="button" value="+1" />
+                <input name="" type="button" class="button" value="I want to work on this" />
+                <input name="" type="button" class="button sel" value="Start iteration" />
+                <input name="" type="button" class="button" value="Close and reject" /><br />
+
+                <span>Title: <strong>{{data.title}}</strong> <a class="cancel" href="javascript:void(0);">Rename</a></span>
+
+                <textarea name="" cols="" id="txtIdea" rows="" class="txt_field area"></textarea><br />
+
+                <span><input name="" type="button" class="button" value="Save" /></span>
+            </section>
+        </article>
+    </section>
+
+    <aside class="fr">
+        <section class="iteration fl">
+            <i>This iteration is</i> COMPLETED
+        </section>
+
+        <ul>
+            <li>
+                <div class="box_green fl"><img src="images/img_post.jpg" class="grn_brdr" width="30" height="30" alt="image" /></div>
+                <div>
+                    Jonathan Black<br />
+                    <span class="green">+1</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="box_green fl"><img src="images/img_post.jpg" class="grn_brdr" width="30" height="30" alt="image" /></div>
+                <div>
+                    Jonathan Black<br />
+                    <span class="green">+1</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="box_orange fl"><img src="images/img_post.jpg" class="grn_brdr" width="30" height="30" alt="image" /></div>
+                <div>
+                    Jonathan Black<br />
+                    <span class="orange">Worked on this</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="box_orange fl"><img src="images/img_post.jpg" class="grn_brdr" width="30" height="30" alt="image" /></div>
+                <div>
+                    Jonathan Black<br />
+                    <span class="orange">Worked on this</span>
+                </div>
+            </li>
+
+            <li>
+                <div class="box_green fl"><img src="images/img_post.jpg" class="grn_brdr" width="30" height="30" alt="image" /></div>
+                <div>
+                    Jonathan Black<br />
+                    <span class="green">+1</span>
+                </div>
+            </li>
+        </ul>
+    </aside>
+
+    <div class="clr"></div>
+</section>
+
+{% endblock post_user_content %}

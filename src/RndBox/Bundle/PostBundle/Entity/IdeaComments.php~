@@ -1,0 +1,202 @@
+<?php
+
+namespace RndBox\Bundle\PostBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RndBox\Bundle\PostBundle\Entity\IdeaComments
+ */
+class IdeaComments
+{
+    /**
+     * @var integer $ideaCommentId
+     */
+    private $ideaCommentId;
+
+    /**
+     * @var integer $userId
+     */
+    private $userId;
+
+    /**
+     * @var integer $ideaId
+     */
+    private $ideaId;
+
+    /**
+     * @var text $comment
+     */
+    private $comment;
+
+    /**
+     * @var string $likeIt
+     */
+    private $likeIt;
+
+    /**
+     * @var string $wantToWork
+     */
+    private $wantToWork;
+
+    /**
+     * @var datetime $createdDate
+     */
+    private $createdDate;
+
+    /**
+     * @var datetime $modifiedDate
+     */
+    private $modifiedDate;
+
+
+    /**
+     * Get ideaCommentId
+     *
+     * @return integer 
+     */
+    public function getIdeaCommentId()
+    {
+        return $this->ideaCommentId;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set ideaId
+     *
+     * @param integer $ideaId
+     */
+    public function setIdeaId($ideaId)
+    {
+        $this->ideaId = $ideaId;
+    }
+
+    /**
+     * Get ideaId
+     *
+     * @return integer 
+     */
+    public function getIdeaId()
+    {
+        return $this->ideaId;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param text $comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return text 
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Set likeIt
+     *
+     * @param string $likeIt
+     */
+    public function setLikeIt($likeIt)
+    {
+        $this->likeIt = $likeIt;
+    }
+
+    /**
+     * Get likeIt
+     *
+     * @return string 
+     */
+    public function getLikeIt()
+    {
+        return $this->likeIt;
+    }
+
+    /**
+     * Set wantToWork
+     *
+     * @param string $wantToWork
+     */
+    public function setWantToWork($wantToWork)
+    {
+        $this->wantToWork = $wantToWork;
+    }
+
+    /**
+     * Get wantToWork
+     *
+     * @return string 
+     */
+    public function getWantToWork()
+    {
+        return $this->wantToWork;
+    }
+
+    /**
+     * Set createdDate
+     *
+     * @param datetime $createdDate
+     */
+    public function setCreatedDate($createdDate)
+    {
+        $this->createdDate = $createdDate;
+    }
+
+    /**
+     * Get createdDate
+     *
+     * @return datetime 
+     */
+    public function getCreatedDate()
+    {
+        return $this->createdDate;
+    }
+
+    /**
+     * Set modifiedDate
+     *
+     * @param datetime $modifiedDate
+     */
+    public function setModifiedDate($modifiedDate)
+    {
+        $this->modifiedDate = $modifiedDate;
+    }
+
+    /**
+     * Get modifiedDate
+     *
+     * @return datetime 
+     */
+    public function getModifiedDate()
+    {
+        return $this->modifiedDate;
+    }
+}

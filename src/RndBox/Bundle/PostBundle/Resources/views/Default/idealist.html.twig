@@ -18,7 +18,13 @@
         <article class="details fl">
             <h2>{{ post.title|e }}</h2>
             <div class="box fl">
-                <img src="images/img_post.jpg" width="50" height="50" alt="image" />
+
+                {% image output="/images/img_post.png"
+                    '@RndBoxAuthBundle/Resources/public/images/img_post.jpg'
+                %}
+                <img src="{{ asset_url }}" width="50" height="50"  alt="The Author of the post" />
+                {% endimage %}
+
             </div>
 
             <div class="box_green fl">
@@ -31,7 +37,10 @@
                 5 comments
             </div>
         </article>
-
+        {% else %}
+        <article class="details fl">
+            <h2>{{ 'idea.no_posted_iteration_found'|trans({},'RndBoxPostBundle') }}</h2>
+        </article>
         {% endfor %}
 
     </section>

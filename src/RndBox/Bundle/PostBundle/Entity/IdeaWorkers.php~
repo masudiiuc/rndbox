@@ -1,0 +1,77 @@
+<?php
+
+namespace RndBox\Bundle\PostBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RndBox\Bundle\PostBundle\Entity\IdeaWorkers
+ */
+class IdeaWorkers
+{
+    /**
+     * @var integer $ideaWorkerId
+     */
+    private $ideaWorkerId;
+
+    /**
+     * @var integer $userId
+     */
+    private $userId;
+
+    /**
+     * @var datetime $startedDate
+     */
+    private $startedDate;
+
+
+    /**
+     * Get ideaWorkerId
+     *
+     * @return integer 
+     */
+    public function getIdeaWorkerId()
+    {
+        return $this->ideaWorkerId;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set startedDate
+     *
+     * @param datetime $startedDate
+     */
+    public function setStartedDate($startedDate)
+    {
+        $this->startedDate = $startedDate;
+    }
+
+    /**
+     * Get startedDate
+     *
+     * @return datetime 
+     */
+    public function getStartedDate()
+    {
+        return $this->startedDate;
+    }
+}
